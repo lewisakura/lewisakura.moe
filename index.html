@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>lewisakura</title>
-    <style>      
+    <style>
       #mewo {
         position: absolute;
         top: 50%;
@@ -13,7 +13,7 @@
         transform: translate(-50%, -50%);
         image-rendering: pixelated;
       }
-      
+
       @media (prefers-color-scheme: dark) {
         body {
           background: #000;
@@ -28,5 +28,15 @@
   </head>
   <body>
     <img id="mewo" src="mewo.gif">
+    <audio src="white_space.ogg" loop autoplay></audio>
+
+    <script>
+      const meow = new Audio("meow.ogg");
+
+      const mewo = document.getElementById("mewo");
+      mewo.addEventListener("click", () => {
+        meow.play();
+      });
+    </script>
   </body>
 </html>
