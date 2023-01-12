@@ -1,7 +1,9 @@
-### My SSH keys - used for SSH and Git commit signing.
-# Updated 2023-01-12
+### Begin Lewis' SSH keys ###
+###    upd. 2023-01-12    ###
 
 # Desktop PC
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHSM7fHLG4ejNkaszJ6o6Q5r55Fyc0ftoR7rlhloRJFu lewis@LEWIS-PC
 # Laptop
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILuz9rd8bZH+yjPl1tV9FZc6F7h4PVPffBolJsXWvP4P lewis@LOOKING-GLASS
+
+###  End Lewis' SSH keys  ###
