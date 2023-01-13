@@ -1,11 +1,11 @@
 ### Begin Lewis' SSH keys ###
-###    upd. 2023-01-12    ###
+###    upd. 2023-01-13    ###
 
-# Desktop PC
+# Desktop
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHSM7fHLG4ejNkaszJ6o6Q5r55Fyc0ftoR7rlhloRJFu lewis@LEWIS-PC
 # Laptop
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILuz9rd8bZH+yjPl1tV9FZc6F7h4PVPffBolJsXWvP4P lewis@LOOKING-GLASS
-# Server (don't add unless my server needs to rsync/ssh/etc.)
+# Home Server (don't add unless it needs to rsync/ssh/etc.)
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMck+ywvLO0aUPD/gH3eEAb5ltTlfxwQUkZRBmoJ2OE alice@wonderland
 
 ###  End Lewis' SSH keys  ###
