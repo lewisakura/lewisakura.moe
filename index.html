@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>lewisakura</title>
-    <style>
-      #mewo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        image-rendering: pixelated;
-      }
+        <title>lewisakura</title>
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: #000;
-          color: #fff;
-        }
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <h1>lewisakura 🌸</h1>
+        <pre><code data-language="javascript">console.log("hello world");</code></pre>
+        <p>
+            ...and nice to meet you! I'm Lewis (but you can also call me Lewi), a software engineer &mdash; primarily
+            backend &mdash; and I exist! I currently mostly write projects for my own personal use, as part of teams, or
+            as commissions for freelance.
+        </p>
 
-        #mewo {
-          filter: invert(1);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <img id="mewo" src="mewo.gif">
-    <audio id="whiteSpace" src="white_space.ogg" loop autoplay></audio>
+        <details>
+            <summary>More?</summary>
+            <p>
+                Nice to see your curiosity! I was 18 the last time this site was updated, and I have a huge interest in
+                technology. Whilst software engineering is my passion and my major, I've dabbled in network engineering
+                and cybersecurity. They're really fun topics, so I'm very passionate about all three!
+            </p>
+            <p>
+                I really like designing pretty websites, but actually implementing them is a problem for me. I've
+                unfortunately had to throw away projects because of it mainly because they were web design heavy or they
+                depended on public usage. However, some projects I've been able to keep because of being in teams! I
+                really like working in teams of people since it helps me distribute the workload and I can focus on my
+                strengths, which is usually engineering backend technology.
+            </p>
+            <p>
+                I'm also a game developer, primarily working on the Roblox platform. Despite the stigma around it, I
+                think it's a great platform for learning and I've had a lot of fun working on it. I've also used Unity,
+                Unreal, and Godot.
+            </p>
+        </details>
 
-    <script>
-      const whiteSpace = document.getElementById("whiteSpace");
-      whiteSpace.volume = 0.1;
-      
-      const meow = new Audio("meow.ogg");
+        <h2>Contact</h2>
+        <p>
+            You want to contact me about something? Cool! Hit me up at <code>lewi (at) lewisakura (dot) moe</code> and
+            we can chat! Alternatively, shoot me a DM on Discord (<code>lewisakura#1337</code>) and I promise to get
+            back to you within this century.
+        </p>
 
-      const mewo = document.getElementById("mewo");
-      mewo.addEventListener("click", () => {
-        meow.play();
-      });
-      
-      document.addEventListener("click", () => {
-        whiteSpace.play();
-      });
-    </script>
-  </body>
+        <hr />
+        <div id="funFacts">
+            Here's some quickfire fun facts about this website:
+            <ul>
+                <li>
+                    The CSS is a derivative of the excellent
+                    <a href="https://github.com/oxalorg/sakura">sakura.css</a> framework. I wrote the CSS myself, but
+                    the majority is based on this and sometimes is even verbatim. It's a wonderful framework, you should
+                    check it out!
+                </li>
+                <li>I wrote this in approximately 2 hours.</li>
+                <li>
+                    Shiki (the code highlighter on this site) is mainly a build-time tool, but I wrote some very awful
+                    JavaScript to get it to work at runtime. Please do not look at the source, it's very overengineered
+                    and I'll throw it away someday.
+                </li>
+                <li>
+                    Speaking of build-time tools, there are none here. I manually wrote all the HTML because I'm a
+                    masochist and I haven't futureproofed this at all.
+                </li>
+                <li>
+                    The monospace font is <a href="https://typeof.net/Iosevka/">Iosevka</a> (specifically the web
+                    variant), and everything else is <a href="https://fonts.google.com/specimen/Inter">Inter</a>, unless
+                    of course none of it loaded.
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/shiki@0.12.1/dist/index.unpkg.iife.js"></script>
+        <script>
+            (async () => {
+                const highlighter = await shiki.getHighlighter({
+                    theme: await fetch('/mocha.json').then(res => res.json()),
+                    langs: []
+                });
+
+                document.querySelectorAll('pre code').forEach(async code => {
+                    const language = code.dataset.language;
+
+                    if (!highlighter.getLoadedLanguages().includes(language)) await highlighter.loadLanguage(language);
+
+                    const tokens = highlighter.codeToThemedTokens(code.innerText, language);
+
+                    const html = shiki.renderToHtml(tokens, {
+                        bg: '#313244'
+                    });
+
+                    const template = document.createElement('template');
+                    template.innerHTML = html;
+                    code.parentNode.parentNode.replaceChild(template.content.firstChild, code.parentNode);
+                });
+            })();
+        </script>
+    </body>
 </html>

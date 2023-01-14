@@ -1,0 +1,177 @@
+/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
+/* but with catppuccin theme colors */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('/iosevka/iosevka.css');
+
+html {
+    font-size: 62.5%;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        sans-serif;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.618;
+    max-width: 38em;
+    margin: auto;
+    color: #cdd6f4;
+    background-color: #1e1e2e;
+    padding: 13px;
+}
+
+@media (max-width: 684px) {
+    body {
+        font-size: calc(1.8rem * 0.85);
+    }
+}
+
+@media (max-width: 382px) {
+    body {
+        font-size: calc(1.8rem * 0.75);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    color: #f5c2e7;
+}
+
+h1 {
+    font-size: 2.35em;
+    border-bottom: 2px solid #f5c2e7;
+    padding-bottom: 2px;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.75em;
+}
+h4 {
+    font-size: 1.5em;
+}
+h5 {
+    font-size: 1.25em;
+}
+h6 {
+    font-size: 1em;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 2.5rem;
+}
+
+small,
+sub,
+sup {
+    font-size: 75%;
+}
+
+hr {
+    border-color: #f5c2e7;
+}
+
+a {
+    text-decoration: none;
+    color: #f5c2e7;
+}
+
+a:hover {
+    border-bottom: 2px solid #f5c2e7;
+}
+
+ul {
+    padding-left: 1.4em;
+    margin-top: 0px;
+    margin-bottom: 2.5rem;
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+blockquote {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-right: 0.8em;
+    border-left: 5px solid #f5c2e7;
+    margin-bottom: 2.5rem;
+    background-color: #313244;
+}
+
+pre {
+    background-color: #313244;
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    margin-top: 0px;
+    margin-bottom: 2.5rem;
+    font-size: 0.9em;
+    font-family: 'Iosevka Web', monospace;
+}
+
+code,
+kbd,
+samp {
+    font-size: 0.9em;
+    padding: 0 0.5em;
+    background-color: #313244;
+    white-space: pre-wrap;
+    font-family: 'Iosevka Web', monospace;
+}
+
+pre > code {
+    padding: 0;
+    background-color: transparent;
+    white-space: pre;
+    font-size: 1em;
+    font-family: 'Iosevka Web', monospace;
+}
+
+code {
+    counter-reset: step;
+    counter-increment: step 0;
+}
+
+code .line:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1.5rem;
+    display: inline-block;
+    text-align: right;
+    color: #7f849c;
+}
+
+table {
+    text-align: justify;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0.5em;
+    border-bottom: 1px solid #313244;
+}
+
+#funFacts {
+    font-size: 75%;
+}
