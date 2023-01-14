@@ -26,18 +26,23 @@
       }
     </style>
   </head>
-  <body onclick="document.getElementById('whiteSpace').play()">
+  <body>
     <img id="mewo" src="mewo.gif">
     <audio id="whiteSpace" src="white_space.ogg" loop autoplay></audio>
 
     <script>
-      document.getElementById("whiteSpace").volume = 0.25;
+      const whiteSpace = document.getElementById("whiteSpace");
+      whiteSpace.volume = 0.1;
       
       const meow = new Audio("meow.ogg");
 
       const mewo = document.getElementById("mewo");
       mewo.addEventListener("click", () => {
         meow.play();
+      });
+      
+      document.addEventListener("click", () => {
+        whiteSpace.play();
       });
     </script>
   </body>
