@@ -4,6 +4,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('/iosevka/iosevka.css');
 
+/* https://github.com/catppuccin/catppuccin */
+:root {
+    --base: #1e1e2e;
+    --surface0: #313244;
+    --overlay1: #7f849c;
+    --text: #cdd6f4;
+    --pink: #f5c2e7;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --base: #eff1f5;
+        --surface0: #ccd0da;
+        --overlay1: #8c8fa1;
+        --text: #4c4f69;
+        --pink: #ea76cb;
+    }
+}
+
 html {
     font-size: 62.5%;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
@@ -15,8 +34,8 @@ body {
     line-height: 1.618;
     max-width: 38em;
     margin: auto;
-    color: #cdd6f4;
-    background-color: #1e1e2e;
+    color: var(--text);
+    background-color: var(--base);
     padding: 13px;
 }
 
@@ -46,12 +65,12 @@ h6 {
     word-wrap: break-word;
     -ms-word-break: break-all;
     word-break: break-word;
-    color: #f5c2e7;
+    color: var(--pink);
 }
 
 h1 {
     font-size: 2.35em;
-    border-bottom: 2px solid #f5c2e7;
+    border-bottom: 2px solid var(--pink);
     padding-bottom: 2px;
 }
 h2 {
@@ -82,16 +101,16 @@ sup {
 }
 
 hr {
-    border-color: #f5c2e7;
+    border-color: var(--pink);
 }
 
 a {
     text-decoration: none;
-    color: #f5c2e7;
+    color: var(--pink);
 }
 
 a:hover {
-    border-bottom: 2px solid #f5c2e7;
+    border-bottom: 2px solid var(--pink);
 }
 
 ul {
@@ -111,13 +130,13 @@ blockquote {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     padding-right: 0.8em;
-    border-left: 5px solid #f5c2e7;
+    border-left: 5px solid var(--pink);
     margin-bottom: 2.5rem;
-    background-color: #313244;
+    background-color: var(--surface0);
 }
 
 pre {
-    background-color: #313244;
+    background-color: var(--surface0);
     display: block;
     padding: 1em;
     overflow-x: auto;
@@ -132,7 +151,7 @@ kbd,
 samp {
     font-size: 0.9em;
     padding: 0 0.5em;
-    background-color: #313244;
+    background-color: var(--surface0);
     white-space: pre-wrap;
     font-family: 'Iosevka Web', monospace;
 }
@@ -157,7 +176,7 @@ code .line:before {
     margin-right: 1.5rem;
     display: inline-block;
     text-align: right;
-    color: #7f849c;
+    color: var(--overlay1);
 }
 
 table {
@@ -169,7 +188,7 @@ table {
 td,
 th {
     padding: 0.5em;
-    border-bottom: 1px solid #313244;
+    border-bottom: 1px solid var(--surface0);
 }
 
 #funFacts {
