@@ -99,7 +99,7 @@
                     const tokens = highlighter.codeToThemedTokens(code.innerText, language);
 
                     const html = shiki.renderToHtml(tokens, {
-                        bg: '#313244'
+                        bg: 'var(--surface0)'
                     });
 
                     const template = document.createElement('template');

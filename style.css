@@ -102,6 +102,7 @@ sup {
 
 hr {
     border-color: var(--pink);
+    border-style: solid;
 }
 
 a {
