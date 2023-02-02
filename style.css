@@ -7,18 +7,22 @@
 /* https://github.com/catppuccin/catppuccin */
 :root {
     --base: #1e1e2e;
+    --mantle: #181825;
     --surface0: #313244;
     --overlay1: #7f849c;
     --text: #cdd6f4;
+    --subtext0: #a6adc8;
     --pink: #f5c2e7;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --base: #eff1f5;
+        --mantle: #e6e9ef;
         --surface0: #ccd0da;
         --overlay1: #8c8fa1;
         --text: #4c4f69;
+        --subtext0: #6c6f85;
         --pink: #ea76cb;
     }
 }
@@ -136,6 +140,15 @@ blockquote {
     background-color: var(--surface0);
 }
 
+blockquote small {
+    font-style: italic;
+    color: var(--subtext0);
+}
+
+blockquote small:before {
+    content: '— ';
+}
+
 pre {
     background-color: var(--surface0);
     display: block;
@@ -192,10 +205,70 @@ th {
     border-bottom: 1px solid var(--surface0);
 }
 
+summary {
+    cursor: pointer;
+    user-select: none;
+}
+
 #funFacts {
     font-size: 75%;
 }
 
 #socials {
     text-align: center;
+}
+
+/* thank you @itsmeimtom 🙏 */
+
+article.placement div.placement-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--pink);
+    margin-bottom: 1.5em;
+}
+
+article.placement div.placement-info h5 {
+    color: var(--pink);
+    margin: 0;
+
+    /* weird box thing */
+    display: inline-block;
+    transform: translateY(calc(50% + 1px));
+    background-color: var(--base);
+    padding-right: 16px;
+
+    line-height: inherit;
+}
+
+article.placement div.placement-info span {
+    /* weird box thing */
+    display: inline-block;
+    transform: translateY(calc(50% + 1px));
+    background-color: var(--base);
+    border: 2px solid var(--pink);
+    padding: 4px 16px;
+
+    color: var(--subtext0);
+
+    font-family: 'Iosevka Web', monospace;
+    font-weight: bold;
+}
+
+#oldPlacements {
+    background: var(--mantle);
+    padding: 1em;
+}
+
+#oldPlacements h3 {
+    margin: 0;
+}
+
+#oldPlacements article.placement:last-child p:last-child {
+    margin-bottom: 0;
+}
+
+#oldPlacements > article.placement div.placement-info h5,
+#oldPlacements > article.placement div.placement-info span {
+    background-color: var(--mantle);
 }
