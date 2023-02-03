@@ -27,14 +27,20 @@ const { title, posts } = Astro.props;
 					</h3>
 					<span class="date">
 						<time datetime={data.createdAt.toISOString()}>
-							{data.createdAt.toLocaleDateString()}
+							{data.createdAt
+								.toISOString()
+								.replace(/T/, " ")
+								.replace(/\..+/, "")}
 						</time>
 						{data.modifiedAt && (
 							<>
 								{" "}
 								(updated{" "}
 								<time datetime={data.modifiedAt.toISOString()}>
-									{data.modifiedAt.toLocaleDateString()}
+									{data.modifiedAt
+										.toISOString()
+										.replace(/T/, " ")
+										.replace(/\..+/, "")}
 								</time>
 								)
 							</>

@@ -18,7 +18,7 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	<h2>{title}</h2>
 	<span id="date">
 		<time datetime={createdAt.toISOString()}>
-			{createdAt.toLocaleDateString()}
+			{createdAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
 		</time>
 		{
 			modifiedAt && (
@@ -26,7 +26,7 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 					{" "}
 					(updated{" "}
 					<time datetime={modifiedAt.toISOString()}>
-						{modifiedAt.toLocaleDateString()}
+						{modifiedAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
 					</time>
 					)
 				</>
