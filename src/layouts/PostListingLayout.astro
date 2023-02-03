@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "./Layout.astro";
+
+export interface Props {
+	title: string;
+	posts: CollectionEntry<"posts">[];
+}
+
+const { title, posts } = Astro.props;
+---
+
+<Layout title={title}>
+	<h2>{title}</h2>
+	{
+		posts
+			.sort(
+				(a, b) =>
+					(b.data.modifiedAt ?? b.data.createdAt).getTime() -
+					(a.data.modifiedAt ?? a.data.createdAt).getTime()
+			)
+			.map(({ data, slug }) => (
+				<article>
+					<h3>
+						<a href={`/posts/${slug}`}>{data.title}</a>
+					</h3>
+					<span class="date">
+						<time datetime={data.createdAt.toISOString()}>
+							{data.createdAt.toLocaleDateString()}
+						</time>
+						{data.modifiedAt && (
+							<>
+								{" "}
+								(updated{" "}
+								<time datetime={data.modifiedAt.toISOString()}>
+									{data.modifiedAt.toLocaleDateString()}
+								</time>
+								)
+							</>
+						)}
+					</span>
+					<p>
+						{data.description}{" "}
+						<span>
+							{data.tags.map((tag) => (
+								<a href={`/posts/tags/${tag}`} class="tag">
+									#{tag}
+								</a>
+							))}
+						</span>
+					</p>
+				</article>
+			))
+	}
+</Layout>
+
+<style>
+	.tag {
+		color: var(--subtext0);
+		font-style: italic;
+	}
+
+	.date {
+		color: var(--subtext0);
+	}
+</style>

@@ -1,0 +1,29 @@
+---
+import PostListingLayout from "../../../layouts/PostListingLayout.astro";
+
+import { CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+
+	const postsByTag: { [tag: string]: CollectionEntry<"posts">[] } = {};
+
+	for (const post of posts) {
+		for (const tag of post.data.tags) {
+			(postsByTag[tag] ??= []).push(post);
+		}
+	}
+
+	return Object.keys(postsByTag).map((tag) => ({
+		params: { tag },
+		props: { posts: postsByTag[tag] },
+	}));
+}
+
+const { tag } = Astro.params;
+const posts = await getCollection("posts", (post) =>
+	post.data.tags.includes(tag!)
+);
+---
+
+<PostListingLayout title={`Posts by tag #${tag}`} posts={posts} />
