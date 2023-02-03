@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^6.1.1",
     "@astrojs/mdx": "^0.16.0",
+    "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.1",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/iosevka": "^4.5.4",
