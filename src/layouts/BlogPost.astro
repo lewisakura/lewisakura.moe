@@ -1,7 +1,7 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
 import Comments from "../components/Comments.astro";
+import Tag from "../components/Tag.astro";
 
 export interface Props {
 	title: string;
@@ -35,15 +35,7 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	</span>
 	<p>
 		{description}
-		<span
-			>{
-				tags.map((tag) => (
-					<a href={`/posts/tags/${tag}`} class="tag">
-						#{tag}
-					</a>
-				))
-			}</span
-		>
+		<span>{tags.map((tag) => <Tag tag={tag} />)}</span>
 	</p>
 	<hr />
 
@@ -56,6 +48,5 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	.tag,
 	#date {
 		color: var(--subtext0);
-		font-style: italic;
 	}
 </style>

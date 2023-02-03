@@ -1,0 +1,15 @@
+---
+export interface Props {
+	tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+<a href={`/posts/tags/${tag}`} class="tag">#{tag}</a>
+
+<style>
+	.tag {
+		color: var(--subtext0);
+	}
+</style>

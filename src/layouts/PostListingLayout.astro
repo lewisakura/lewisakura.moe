@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
+import Tag from "../components/Tag.astro";
 
 export interface Props {
 	title: string;
@@ -43,9 +44,7 @@ const { title, posts } = Astro.props;
 						{data.description}{" "}
 						<span>
 							{data.tags.map((tag) => (
-								<a href={`/posts/tags/${tag}`} class="tag">
-									#{tag}
-								</a>
+								<Tag tag={tag} />
 							))}
 						</span>
 					</p>
@@ -55,11 +54,6 @@ const { title, posts } = Astro.props;
 </Layout>
 
 <style>
-	.tag {
-		color: var(--subtext0);
-		font-style: italic;
-	}
-
 	.date {
 		color: var(--subtext0);
 	}
