@@ -6,12 +6,13 @@ import Tag from "../components/Tag.astro";
 export interface Props {
 	title: string;
 	posts: CollectionEntry<"posts">[];
+	description: string;
 }
 
-const { title, posts } = Astro.props;
+const { title, posts, description } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
 	<h2>{title}</h2>
 	{
 		posts
