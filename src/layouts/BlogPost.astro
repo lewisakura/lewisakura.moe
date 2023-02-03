@@ -14,7 +14,7 @@ export interface Props {
 const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
 	<h2>{title}</h2>
 	<span id="date">
 		<time datetime={createdAt.toISOString()}>
