@@ -1,0 +1,61 @@
+---
+export interface Props {
+	title: string;
+
+	from: string | number;
+	to?: string | number;
+
+	isPaid: boolean;
+
+	link?: string;
+
+	children: any[];
+}
+
+const { title, link, from, to, isPaid } = Astro.props;
+---
+
+<article class="placement">
+	<div class="placement-info">
+		<h5>{title} {link && <a href={link}>🔗</a>} {isPaid && "💸"}</h5>
+		<span>{from !== to ? `${from}\u2013${to || ""}` : from}</span>
+	</div>
+	<slot />
+</article>
+
+<style>
+	article.placement div.placement-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 2px solid var(--pink);
+		margin-bottom: 1.5em;
+	}
+
+	article.placement div.placement-info h5 {
+		color: var(--pink);
+		margin: 0;
+
+		/* weird box thing */
+		display: inline-block;
+		transform: translateY(calc(50% + 1px));
+		background-color: var(--base);
+		padding-right: 16px;
+
+		line-height: inherit;
+	}
+
+	article.placement div.placement-info span {
+		/* weird box thing */
+		display: inline-block;
+		transform: translateY(calc(50% + 1px));
+		background-color: var(--base);
+		border: 2px solid var(--pink);
+		padding: 4px 16px;
+
+		color: var(--subtext0);
+
+		font-family: "Iosevka", monospace;
+		font-weight: bold;
+	}
+</style>
