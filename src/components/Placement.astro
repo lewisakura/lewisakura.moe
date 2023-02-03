@@ -13,7 +13,7 @@ export interface Props {
 const { title, link, from, to, isPaid } = Astro.props;
 ---
 
-<article class={`placement ${to && "mantle"}`}>
+<article class:list={["placement", { mantle: !!to }]}>
 	<div class="placement-info">
 		<h5>{title} {link && <a href={link}>🔗</a>} {isPaid && "💸"}</h5>
 		<span>{from !== to ? `${from}\u2013${to || ""}` : from}</span>
@@ -57,7 +57,7 @@ const { title, link, from, to, isPaid } = Astro.props;
 		font-weight: bold;
 	}
 
-	article.placement div.placement-info h5,
+	article.placement.mantle div.placement-info h5,
 	article.placement.mantle div.placement-info span {
 		background-color: var(--mantle);
 	}
