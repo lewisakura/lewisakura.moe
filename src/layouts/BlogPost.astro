@@ -35,7 +35,7 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	</span>
 	<p>
 		{description}
-		<span>{tags.map((tag) => <Tag tag={tag} />)}</span>
+		<span class="tag-list">{tags.map((tag) => <Tag tag={tag} />)}</span>
 	</p>
 	<hr />
 
@@ -48,5 +48,9 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	.tag,
 	#date {
 		color: var(--subtext0);
+	}
+
+	.tag-list :global(.tag) {
+		margin-right: 0.5rem;
 	}
 </style>
