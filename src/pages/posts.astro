@@ -1,31 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import PostListingLayout from "../layouts/PostListingLayout.astro";
 
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
 ---
 
-<Layout title="Posts">
-	{
-		posts.map(({ data, slug }) => (
-			<article>
-				<h2>
-					<a href={`/posts/${slug}`}>{data.title}</a>
-				</h2>
-				<small class="tags">
-					{data.tags.map((tag) => `#${tag}`).join(" ")}
-				</small>
-				<p>{data.description}</p>
-			</article>
-		))
-	}
-</Layout>
-
-<style>
-	.tags {
-		color: var(--subtext0);
-		font-style: italic;
-		font-family: Iosevka, monospace;
-	}
-</style>
+<PostListingLayout title="Posts" posts={posts} />

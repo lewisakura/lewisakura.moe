@@ -1,6 +1,7 @@
 module.exports = {
 	singleQuote: false,
 	useTabs: true,
+	bracketSameLine: true,
 
 	plugins: [require.resolve("prettier-plugin-astro")],
 	overrides: [

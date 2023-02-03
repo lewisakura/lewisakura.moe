@@ -10,19 +10,49 @@ export interface Props {
 	modifiedAt?: Date;
 }
 
-const { title, description } = Astro.props;
+const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 ---
 
 <Layout title={title}>
 	<h2>{title}</h2>
-	<small>{description}</small>
+	<span id="date">
+		<time datetime={createdAt.toISOString()}>
+			{createdAt.toLocaleDateString()}
+		</time>
+		{
+			modifiedAt && (
+				<>
+					{" "}
+					(updated{" "}
+					<time datetime={modifiedAt.toISOString()}>
+						{modifiedAt.toLocaleDateString()}
+					</time>
+					)
+				</>
+			)
+		}
+	</span>
+	<p>
+		{description}
+		<span
+			>{
+				tags.map((tag) => (
+					<a href={`/posts/tags/${tag}`} class="tag">
+						#{tag}
+					</a>
+				))
+			}</span
+		>
+	</p>
 	<hr />
 
 	<slot />
 </Layout>
 
 <style>
-	h2 {
-		margin-bottom: 0;
+	.tag,
+	#date {
+		color: var(--subtext0);
+		font-style: italic;
 	}
 </style>
