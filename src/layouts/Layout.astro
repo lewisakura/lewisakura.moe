@@ -1,4 +1,10 @@
 ---
+import "@fontsource/inter";
+import "@fontsource/inter/700.css";
+
+import "@fontsource/iosevka";
+import "@fontsource/iosevka/700.css";
+
 export interface Props {
 	title?: string;
 	description?: string;
@@ -53,12 +59,6 @@ const { title, description } = Astro.props;
 <style is:global>
 	/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
 	/* but with catppuccin theme colors */
-
-	@import "@fontsource/inter";
-	@import "@fontsource/inter/700.css";
-
-	@import "@fontsource/iosevka";
-	@import "@fontsource/iosevka/700.css";
 
 	/* https://github.com/catppuccin/catppuccin */
 	:root {
