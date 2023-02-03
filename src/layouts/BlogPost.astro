@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
+import Comments from "../components/Comments.astro";
 
 export interface Props {
 	title: string;
@@ -47,6 +48,8 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 	<hr />
 
 	<slot />
+
+	<Comments />
 </Layout>
 
 <style>
