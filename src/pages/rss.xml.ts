@@ -10,7 +10,7 @@ export const get = () =>
 		site: "https://lewisakura.moe",
 		drafts: false,
 		items: posts.map(({ data, slug }) => ({
-			link: new URL(slug, "https://lewisakura.moe/posts").href,
+			link: new URL(`/posts/${slug}`, "https://lewisakura.moe").href,
 			title: data.title,
 			pubDate: data.createdAt,
 			description: data.description,
