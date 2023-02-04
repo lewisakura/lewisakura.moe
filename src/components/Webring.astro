@@ -7,7 +7,9 @@ export interface Props {
 const { name, url } = Astro.props;
 ---
 
-<a href={url}><img src={`/webrings/${name}`} /></a>
+<a href={url}>
+	<img src={`/webrings/${name}`} alt={url} loading="lazy" decoding="async" />
+</a>
 
 <style>
 	a:hover {
