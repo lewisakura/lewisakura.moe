@@ -8,3 +8,9 @@ const { name, url } = Astro.props;
 ---
 
 <a href={url}><img src={`/webrings/${name}.png`} /></a>
+
+<style>
+	a:hover {
+		border-bottom: 0 !important;
+	}
+</style>
