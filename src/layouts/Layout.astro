@@ -22,6 +22,12 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="lewisakura"
+			href="https://lewisakura.moe/rss.xml"
+		/>
 		<title>{title && `${title} | `}lewisakura</title>
 
 		<meta property="og:title" content={title ?? "lewisakura"} />
