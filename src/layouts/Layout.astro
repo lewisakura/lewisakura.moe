@@ -1,4 +1,6 @@
 ---
+import Webring from "../components/Webring.astro";
+
 import "@fontsource/inter";
 import "@fontsource/inter/700.css";
 
@@ -50,11 +52,12 @@ const { title, description } = Astro.props;
 				<code>@lewisakura</code> /
 				<code>@lewisakura_</code>
 			</p>
+			<div id="webring">
+				<Webring name="ovyerus" url="https://ovyerus.com" />
+			</div>
 		</footer>
 	</body>
 </html>
-
-<script></script>
 
 <style is:global>
 	/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
@@ -256,6 +259,10 @@ const { title, description } = Astro.props;
 	}
 
 	#socials {
+		text-align: center;
+	}
+
+	#webring {
 		text-align: center;
 	}
 </style>

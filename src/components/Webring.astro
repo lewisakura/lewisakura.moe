@@ -1,0 +1,10 @@
+---
+export interface Props {
+	name: string;
+	url: string;
+}
+
+const { name, url } = Astro.props;
+---
+
+<a href={url}><img src={`/webrings/${name}.png`} /></a>
