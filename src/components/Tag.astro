@@ -10,6 +10,14 @@ const { tag } = Astro.props;
 
 <style>
 	.tag {
-		color: var(--subtext0);
+		display: inline-block;
+		color: var(--text);
+		background: var(--surface0);
+		padding: 0 0.5em;
+		border: 1px solid var(--pink);
+	}
+
+	.tag:hover {
+		border: 1px solid var(--pink);
 	}
 </style>
