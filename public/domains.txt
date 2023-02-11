@@ -1,0 +1,20 @@
+# Domains I own and control unless stated otherwise.
+#
+# upd. 2023-02-11
+
+# Main site
+lewisakura.moe
+
+### Project sites
+
+# Currently unused with a placeholder page.
+vivy.pics
+
+### Other
+
+# Girlfriend's site. Owned by me on registry + DNS, but content is by her.
+shoritsu.xyz
+
+### Old domains
+
+lewistehminerz.dev
