@@ -91,6 +91,14 @@ const { title, description } = Astro.props;
 			const funny = document.getElementById("theFunny")! as HTMLSpanElement;
 
 			funny.onclick = () => {
+				const currentValue =
+					document.documentElement.style.getPropertyValue("--accent");
+
+				let newValue: string = "";
+				do {
+					newValue = colors[Math.floor(Math.random() * colors.length)];
+				} while (newValue === currentValue);
+
 				document.documentElement.style.setProperty(
 					"--accent",
 					colors[Math.floor(Math.random() * colors.length)]
