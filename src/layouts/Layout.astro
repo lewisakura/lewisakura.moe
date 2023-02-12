@@ -40,7 +40,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<header>
-			<h1>lewisakura 🌸</h1>
+			<h1>lewisakura <span id="theFunny">🌸</span></h1>
 			<nav>
 				<a href="/">about</a> &bull;
 				<a href="/posts">blog</a>
@@ -70,8 +70,42 @@ const { title, description } = Astro.props;
 				<Webring name="tom.gif" url="https://thomasr.me" />
 			</div>
 		</footer>
+		<script>
+			const colors = [
+				"var(--rosewater)",
+				"var(--flamingo)",
+				"var(--pink)",
+				"var(--mauve)",
+				"var(--red)",
+				"var(--maroon)",
+				"var(--peach)",
+				"var(--yellow)",
+				"var(--green)",
+				"var(--teal)",
+				"var(--sky)",
+				"var(--sapphire)",
+				"var(--blue)",
+				"var(--lavender)",
+			];
+
+			const funny = document.getElementById("theFunny")! as HTMLSpanElement;
+
+			funny.onclick = () => {
+				document.documentElement.style.setProperty(
+					"--accent",
+					colors[Math.floor(Math.random() * colors.length)]
+				);
+			};
+		</script>
 	</body>
 </html>
+
+<style>
+	#theFunny {
+		cursor: pointer;
+		user-select: none;
+	}
+</style>
 
 <style is:global>
 	/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
@@ -85,7 +119,21 @@ const { title, description } = Astro.props;
 		--overlay1: var(--ctp-mocha-overlay1);
 		--text: var(--ctp-mocha-text);
 		--subtext0: var(--ctp-mocha-subtext0);
+
+		--rosewater: var(--ctp-mocha-rosewater);
+		--flamingo: var(--ctp-mocha-flamingo);
 		--pink: var(--ctp-mocha-pink);
+		--mauve: var(--ctp-mocha-mauve);
+		--red: var(--ctp-mocha-red);
+		--maroon: var(--ctp-mocha-maroon);
+		--peach: var(--ctp-mocha-peach);
+		--yellow: var(--ctp-mocha-yellow);
+		--green: var(--ctp-mocha-green);
+		--teal: var(--ctp-mocha-teal);
+		--sky: var(--ctp-mocha-sky);
+		--sapphire: var(--ctp-mocha-sapphire);
+		--blue: var(--ctp-mocha-blue);
+		--lavender: var(--ctp-mocha-lavender);
 
 		--accent: var(--pink);
 	}
@@ -98,7 +146,21 @@ const { title, description } = Astro.props;
 			--overlay1: var(--ctp-latte-overlay1);
 			--text: var(--ctp-latte-text);
 			--subtext0: var(--ctp-latte-subtext0);
+
+			--rosewater: var(--ctp-latte-rosewater);
+			--flamingo: var(--ctp-latte-flamingo);
 			--pink: var(--ctp-latte-pink);
+			--mauve: var(--ctp-latte-mauve);
+			--red: var(--ctp-latte-red);
+			--maroon: var(--ctp-latte-maroon);
+			--peach: var(--ctp-latte-peach);
+			--yellow: var(--ctp-latte-yellow);
+			--green: var(--ctp-latte-green);
+			--teal: var(--ctp-latte-teal);
+			--sky: var(--ctp-latte-sky);
+			--sapphire: var(--ctp-latte-sapphire);
+			--blue: var(--ctp-latte-blue);
+			--lavender: var(--ctp-latte-lavender);
 		}
 	}
 
