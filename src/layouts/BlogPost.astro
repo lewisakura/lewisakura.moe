@@ -17,18 +17,13 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 <Layout title={title} description={description}>
 	<h2>{title}</h2>
 	<span id="date">
-		<time datetime={createdAt.toISOString()}>
-			{createdAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
-		</time>
+		{createdAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
 		{
 			modifiedAt && (
 				<>
 					{" "}
-					(updated{" "}
-					<time datetime={modifiedAt.toISOString()}>
-						{modifiedAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
-					</time>
-					)
+					(updated
+					{modifiedAt.toISOString().replace(/T/, " ").replace(/\..+/, "")})
 				</>
 			)
 		}
