@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import mocha from "./mocha.json";
 import compress from "astro-compress";
