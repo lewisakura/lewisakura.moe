@@ -86,6 +86,8 @@ const { title, description } = Astro.props;
 		--text: var(--ctp-mocha-text);
 		--subtext0: var(--ctp-mocha-subtext0);
 		--pink: var(--ctp-mocha-pink);
+
+		--accent: var(--pink);
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -141,7 +143,7 @@ const { title, description } = Astro.props;
 		word-wrap: break-word;
 		-ms-word-break: break-all;
 		word-break: break-word;
-		color: var(--pink);
+		color: var(--accent);
 	}
 
 	h1 {
@@ -175,17 +177,17 @@ const { title, description } = Astro.props;
 	}
 
 	hr {
-		border-color: var(--pink);
+		border-color: var(--accent);
 		border-style: solid;
 	}
 
 	a {
 		text-decoration: none;
-		color: var(--pink);
+		color: var(--accent);
 	}
 
 	a:hover {
-		border-bottom: 2px solid var(--pink);
+		border-bottom: 2px solid var(--accent);
 	}
 
 	ul {
@@ -205,7 +207,7 @@ const { title, description } = Astro.props;
 		padding-top: 0.8em;
 		padding-bottom: 0.8em;
 		padding-right: 0.8em;
-		border-left: 5px solid var(--pink);
+		border-left: 5px solid var(--accent);
 		margin-bottom: 2.5rem;
 		background-color: var(--surface0);
 	}
@@ -286,7 +288,7 @@ const { title, description } = Astro.props;
 	}
 
 	nav {
-		color: var(--pink);
+		color: var(--accent);
 	}
 
 	#socials {
