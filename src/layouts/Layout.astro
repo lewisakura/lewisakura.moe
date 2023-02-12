@@ -88,6 +88,23 @@ const { title, description } = Astro.props;
 				"var(--lavender)",
 			];
 
+			const similarColors = [
+				["var(--rosewater)", "var(--flamingo)", "var(--pink)"],
+				["var(--red)", "var(--maroon)", "var(--pink)"],
+				["var(--peach)", "var(--yellow)"],
+				["var(--teal)", "var(--sky)", "var(--sapphire)"],
+				["var(--blue)", "var(--lavender)"],
+			];
+
+			function isSimilar(oldColor: string, newColor: string) {
+				for (const similar of similarColors) {
+					if (similar.includes(oldColor) && similar.includes(newColor)) {
+						return true;
+					}
+				}
+				return false;
+			}
+
 			const funny = document.getElementById("theFunny")! as HTMLSpanElement;
 
 			funny.onclick = () => {
@@ -97,12 +114,12 @@ const { title, description } = Astro.props;
 				let newValue: string = "";
 				do {
 					newValue = colors[Math.floor(Math.random() * colors.length)];
-				} while (newValue === currentValue);
-
-				document.documentElement.style.setProperty(
-					"--accent",
-					colors[Math.floor(Math.random() * colors.length)]
+				} while (
+					newValue === currentValue ||
+					isSimilar(currentValue, newValue)
 				);
+
+				document.documentElement.style.setProperty("--accent", newValue);
 			};
 
 			// konami code
