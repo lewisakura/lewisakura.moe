@@ -96,6 +96,25 @@ const { title, description } = Astro.props;
 					colors[Math.floor(Math.random() * colors.length)]
 				);
 			};
+
+			// konami code
+			const konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+			let konamiIndex = 0;
+			let yayKomami = false;
+
+			document.addEventListener("keydown", (e) => {
+				if (yayKomami) return;
+
+				if (e.keyCode === konami[konamiIndex++]) {
+					if (konamiIndex === konami.length) {
+						setInterval(() => {
+							funny.click();
+						}, 150);
+					}
+				} else {
+					konamiIndex = 0;
+				}
+			});
 		</script>
 	</body>
 </html>
