@@ -15,6 +15,9 @@ vivy.pics
 # Girlfriend's site. Owned by me on registry + DNS, but content is by her.
 shoritsu.xyz
 
+# ziad87's graciously donated arpa page. I don't directly control this, but content is by me.
+lewi.b.4.0.4.0.6.a.0.a.2.ip6.arpa
+
 ### Old domains
 
 lewistehminerz.dev
