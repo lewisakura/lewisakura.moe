@@ -1,6 +1,6 @@
 # Domains I own and control unless stated otherwise.
 #
-# upd. 2023-02-11
+# upd. 2023-02-13
 
 # Main site
 lewisakura.moe
