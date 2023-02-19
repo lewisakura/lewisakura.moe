@@ -22,20 +22,23 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 		<link
 			rel="alternate"
 			type="application/rss+xml"
 			title="lewisakura"
-			href="https://lewisakura.moe/rss.xml"
+			href={new URL("/rss.xml", Astro.site)}
 		/>
+
 		<title>{title && `${title} | `}lewisakura</title>
 
 		<meta property="og:title" content={title ?? "lewisakura"} />
 		{title && <meta property="og:site_name" content="lewisakura" />}
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://lewisakura.moe/favicon.png" />
+		<meta property="og:image" content={new URL("/favicon.png", Astro.site)} />
 		{description && <meta property="og:description" content={description} />}
 	</head>
 	<body>
