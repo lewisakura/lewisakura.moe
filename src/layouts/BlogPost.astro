@@ -1,5 +1,8 @@
 ---
+import dayjs from "../util/dayjs";
+
 import Layout from "./Layout.astro";
+
 import Comments from "../components/Comments.astro";
 import Tag from "../components/Tag.astro";
 
@@ -17,13 +20,13 @@ const { title, description, createdAt, modifiedAt, tags } = Astro.props;
 <Layout title={title} description={description}>
 	<h2>{title}</h2>
 	<span id="date">
-		{createdAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
+		{dayjs(createdAt).format("Do MMM, YYYY")}
 		{
 			modifiedAt && (
 				<>
 					{" "}
 					(updated
-					{modifiedAt.toISOString().replace(/T/, " ").replace(/\..+/, "")})
+					{dayjs(modifiedAt).format("Do MMM, YYYY")})
 				</>
 			)
 		}

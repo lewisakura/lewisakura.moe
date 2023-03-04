@@ -9,6 +9,7 @@ specifiers:
   '@fontsource/iosevka': ^4.5.4
   astro: ^2.0.10
   astro-compress: ^1.1.32
+  dayjs: ^1.11.7
   prettier: ^2.8.4
   prettier-plugin-astro: ^0.8.0
 
@@ -21,6 +22,7 @@ dependencies:
   '@fontsource/iosevka': 4.5.4
   astro: 2.0.10
   astro-compress: 1.1.32
+  dayjs: 1.11.7
 
 devDependencies:
   prettier: 2.8.4
@@ -1338,6 +1340,10 @@ packages:
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
     dependencies:
       css-tree: 2.2.1
+    dev: false
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /debug/4.3.4:

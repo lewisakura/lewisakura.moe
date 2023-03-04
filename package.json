@@ -18,7 +18,8 @@
 		"@fontsource/inter": "^4.5.15",
 		"@fontsource/iosevka": "^4.5.4",
 		"astro": "^2.0.10",
-		"astro-compress": "^1.1.32"
+		"astro-compress": "^1.1.32",
+		"dayjs": "^1.11.7"
 	},
 	"devDependencies": {
 		"prettier": "^2.8.4",

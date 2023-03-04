@@ -1,6 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
+import dayjs from "../util/dayjs";
+
 import Layout from "./Layout.astro";
+
 import Tag from "../components/Tag.astro";
 
 export interface Props {
@@ -27,14 +31,11 @@ const { title, posts, description } = Astro.props;
 						<a href={`/posts/${slug}`}>{data.title}</a>
 					</h3>
 					<span class="date">
-						{data.createdAt.toISOString().replace(/T/, " ").replace(/\..+/, "")}
+						{dayjs(data.createdAt).format("Do MMM, YYYY")}
 						{data.modifiedAt && (
 							<>
 								(updated
-								{data.modifiedAt
-									.toISOString()
-									.replace(/T/, " ")
-									.replace(/\..+/, "")}
+								{dayjs(data.modifiedAt).format("Do MMM, YYYY")}
 								{})
 							</>
 						)}
