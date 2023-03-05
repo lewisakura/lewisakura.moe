@@ -218,7 +218,10 @@ import Placement from "../components/Placement.astro";
 
 	<script>
 		const age = document.getElementById("age")!;
-		age.innerText = `I am ${new Date().getFullYear() - 2004} years old`;
+		const birthday = new Date(2004, 10, 18);
+		age.innerText = `I am ${Math.floor(
+			(Date.now() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365,
+		)} years old`;
 	</script>
 </Layout>
 
