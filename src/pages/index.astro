@@ -4,7 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Placement from "../components/Placement.astro";
 ---
 
-<Layout description="Hey there!">
+<Layout
+	description="The personal website of lewisakura. Come take a look around!">
 	<p>
 		Hey there, nice to meet you! I'm Lewis (but you can also call me Lewi), a
 		software engineer &mdash; primarily backend &mdash; and an aspiring content
@@ -220,7 +221,7 @@ import Placement from "../components/Placement.astro";
 		const age = document.getElementById("age")!;
 		const birthday = new Date(2004, 10, 18);
 		age.innerText = `I am ${Math.floor(
-			(Date.now() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365,
+			(Date.now() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365
 		)} years old`;
 	</script>
 </Layout>
