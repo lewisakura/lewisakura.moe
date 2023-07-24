@@ -11,18 +11,18 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^0.16.0",
-		"@astrojs/rss": "^2.1.0",
-		"@astrojs/sitemap": "^1.0.1",
-		"@catppuccin/palette": "^0.1.6",
-		"@fontsource/inter": "^4.5.15",
-		"@fontsource/iosevka": "^4.5.4",
-		"astro": "^2.0.10",
-		"astro-compress": "^1.1.32",
-		"dayjs": "^1.11.7"
+		"@astrojs/mdx": "^0.19.7",
+		"@astrojs/rss": "^2.4.3",
+		"@astrojs/sitemap": "^2.0.1",
+		"@catppuccin/palette": "^0.2.0",
+		"@fontsource/inter": "^5.0.5",
+		"@fontsource/iosevka": "^5.0.5",
+		"astro": "^2.9.2",
+		"astro-compress": "^1.1.49",
+		"dayjs": "^1.11.9"
 	},
 	"devDependencies": {
-		"prettier": "^2.8.4",
-		"prettier-plugin-astro": "^0.8.0"
+		"prettier": "^3.0.0",
+		"prettier-plugin-astro": "^0.11.0"
 	}
 }
