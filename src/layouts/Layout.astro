@@ -38,21 +38,14 @@ const { title, description } = Astro.props;
 		<meta property="og:title" content={title ?? "lewisakura"} />
 		{title && <meta property="og:site_name" content="lewisakura" />}
 		<meta property="og:type" content="website" />
-		<meta
-			name="image"
-			property="og:image"
-			content={new URL("/favicon.png", Astro.site)}
-		/>
+		<meta name="image" content={new URL("/favicon.png", Astro.site)} />
+		<meta property="og:image" content={new URL("/favicon.png", Astro.site)} />
 		{
 			description && (
-				<meta
-					name="description"
-					content={description}
-				/>
-				<meta
-					property="og:description"
-					content={description}
-				/>
+				<>
+					<meta name="description" content={description} />
+					<meta property="og:description" content={description} />
+				</>
 			)
 		}
 	</head>
