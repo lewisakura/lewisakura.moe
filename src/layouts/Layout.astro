@@ -38,6 +38,7 @@ const { title, description } = Astro.props;
 		<meta property="og:title" content={title ?? "lewisakura"} />
 		{title && <meta property="og:site_name" content="lewisakura" />}
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
 		<meta name="image" content={new URL("/favicon.png", Astro.site)} />
 		<meta property="og:image" content={new URL("/favicon.png", Astro.site)} />
 		{
@@ -70,6 +71,7 @@ const { title, description } = Astro.props;
 				<a href="https://youtube.com/@lewisakura" rel="me">YouTube</a> &bull;
 				<a href="https://twitch.tv/lewisakura" rel="me">Twitch</a> &bull;
 				<a href="https://www.patreon.com/lewisakura" rel="me">Patreon</a> &bull;
+
 				<code>@lewisakura</code> /
 				<code>@lewisakura_</code>
 			</p>
@@ -223,8 +225,16 @@ const { title, description } = Astro.props;
 
 	html {
 		font-size: 62.5%;
-		font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-			"Helvetica Neue", Arial, "Noto Sans", sans-serif;
+		font-family:
+			Inter,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			"Helvetica Neue",
+			Arial,
+			"Noto Sans",
+			sans-serif;
 	}
 
 	body {
