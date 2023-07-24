@@ -47,6 +47,9 @@ const { title, description } = Astro.props;
 			description && (
 				<meta
 					name="description"
+					content={description}
+				/>
+				<meta
 					property="og:description"
 					content={description}
 				/>
