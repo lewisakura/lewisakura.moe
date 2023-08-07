@@ -8,7 +8,14 @@ const { name, url } = Astro.props;
 ---
 
 <a href={url}>
-	<img src={`/webrings/${name}`} alt={url} loading="lazy" decoding="async" />
+	<img
+		src={`/webrings/${name}`}
+		alt={url}
+		loading="lazy"
+		decoding="async"
+		width="88"
+		height="31"
+	/>
 </a>
 
 <style>
