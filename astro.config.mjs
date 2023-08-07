@@ -1,8 +1,10 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import compress from "@otterlord/astro-compress";
+import critters from "@otterlord/astro-critters";
+
 import mocha from "./mocha.json";
-import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +20,7 @@ export default defineConfig({
 			drafts: true,
 		}),
 		sitemap(),
+		critters(),
 		compress(),
 	],
 	output: "static",

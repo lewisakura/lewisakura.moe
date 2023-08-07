@@ -17,8 +17,9 @@
 		"@catppuccin/palette": "^0.2.0",
 		"@fontsource/inter": "^5.0.5",
 		"@fontsource/iosevka": "^5.0.5",
+		"@otterlord/astro-compress": "^1.1.48",
+		"@otterlord/astro-critters": "^1.1.41",
 		"astro": "^2.9.2",
-		"astro-compress": "^1.1.49",
 		"dayjs": "^1.11.9"
 	},
 	"devDependencies": {
