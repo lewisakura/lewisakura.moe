@@ -192,13 +192,11 @@ const { title, description } = Astro.props;
 			--#{$color}: #{$hex};
 		}
 
-		/*
-		@media (prefers-color-scheme: light) {
-			@each $color, $hex in map-get(catppuccin.$palette, "latte") {
-				--#{$color}: #{$hex};
-			}
-		}
-		*/
+		// @media (prefers-color-scheme: light) {
+		// 	@each $color, $hex in map-get(catppuccin.$palette, "latte") {
+		// 		--#{$color}: #{$hex};
+		// 	}
+		// }
 
 		--accent: var(--pink);
 	}
