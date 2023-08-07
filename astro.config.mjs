@@ -20,7 +20,7 @@ export default defineConfig({
 			drafts: true,
 		}),
 		sitemap(),
-		critters(),
+		//critters(),
 		compress(),
 	],
 	output: "static",
