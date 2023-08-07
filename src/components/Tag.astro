@@ -8,16 +8,16 @@ const { tag } = Astro.props;
 
 <a href={`/posts/tags/${tag}`} class="tag">#{tag}</a>
 
-<style>
+<style lang="scss">
 	.tag {
 		display: inline-block;
 		color: var(--text);
 		background: var(--surface0);
 		padding: 0 0.5em;
 		border: 1px solid var(--accent);
-	}
 
-	.tag:hover {
-		border: 1px solid var(--accent);
+		&:hover {
+			border: 1px solid var(--accent);
+		}
 	}
 </style>

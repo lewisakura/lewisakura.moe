@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import compress from "@otterlord/astro-compress";
-import critters from "@otterlord/astro-critters";
+import purgecss from "astro-purgecss";
 
 import mocha from "./mocha.json";
 
@@ -21,6 +21,11 @@ export default defineConfig({
 		}),
 		sitemap(),
 		//critters(),
+		purgecss({
+			fontFace: true,
+			keyframes: true,
+			content: ["./src/**/*.astro"],
+		}),
 		compress(),
 	],
 	output: "static",

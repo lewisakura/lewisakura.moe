@@ -13,52 +13,55 @@ export interface Props {
 const { title, link, from, to, isPaid } = Astro.props;
 ---
 
-<article class:list={["placement", { mantle: !!to }]}>
-	<div class="placement-info">
+<article class:list={{ mantle: !!to }}>
+	<div>
 		<h5>{title} {link && <a href={link}>🔗</a>} {isPaid && "💸"}</h5>
 		<span>{from !== to ? `${from}\u2013${to || ""}` : from}</span>
 	</div>
 	<slot />
 </article>
 
-<style>
-	article.placement div.placement-info {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 2px solid var(--accent);
-		margin-bottom: 1.5em;
-	}
+<style lang="scss">
+	article {
+		div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 2px solid var(--accent);
+			margin-bottom: 1.5em;
 
-	article.placement div.placement-info h5 {
-		color: var(--accent);
-		margin: 0;
+			h5,
+			span {
+				/* weird box thing */
+				display: inline-block;
+				transform: translateY(calc(50% + 1px));
+				background-color: var(--base);
+			}
 
-		/* weird box thing */
-		display: inline-block;
-		transform: translateY(calc(50% + 1px));
-		background-color: var(--base);
-		padding-right: 16px;
+			h5 {
+				color: var(--accent);
+				margin: 0;
+				padding-right: 16px;
 
-		line-height: inherit;
-	}
+				line-height: inherit;
+			}
 
-	article.placement div.placement-info span {
-		/* weird box thing */
-		display: inline-block;
-		transform: translateY(calc(50% + 1px));
-		background-color: var(--base);
-		border: 2px solid var(--accent);
-		padding: 4px 16px;
+			span {
+				border: 2px solid var(--accent);
+				padding: 4px 16px;
 
-		color: var(--subtext0);
+				color: var(--subtext0);
 
-		font-family: "Iosevka", monospace;
-		font-weight: bold;
-	}
+				font-family: "Iosevka", monospace;
+				font-weight: bold;
+			}
+		}
 
-	article.placement.mantle div.placement-info h5,
-	article.placement.mantle div.placement-info span {
-		background-color: var(--mantle);
+		&.mantle div {
+			h5,
+			span {
+				background-color: var(--mantle);
+			}
+		}
 	}
 </style>

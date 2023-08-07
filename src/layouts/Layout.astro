@@ -1,14 +1,6 @@
 ---
 import Webring from "../components/Webring.astro";
 
-import "@fontsource/inter";
-import "@fontsource/inter/700.css";
-
-import "@fontsource/iosevka";
-import "@fontsource/iosevka/700.css";
-
-import "@catppuccin/palette/style";
-
 export interface Props {
 	title?: string;
 	description?: string;
@@ -169,61 +161,44 @@ const { title, description } = Astro.props;
 	}
 </style>
 
-<style is:global>
+<style is:global lang="scss">
+	@use "@catppuccin/palette/scss/catppuccin";
+
+	@use "@fontsource/inter/scss/mixins" as Inter with (
+		$weights: (
+			400,
+			700,
+		),
+		$directory: "@fontsource/inter/files"
+	);
+
+	@use "@fontsource/iosevka/scss/mixins" as Iosevka with (
+		$weights: (
+			400,
+			700,
+		),
+		$directory: "@fontsource/iosevka/files"
+	);
+
+	@include Inter.faces();
+	@include Iosevka.faces();
+
 	/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
 	/* but with catppuccin theme colors */
 
 	/* https://github.com/catppuccin/catppuccin */
 	:root {
-		--base: var(--ctp-mocha-base);
-		--mantle: var(--ctp-mocha-mantle);
-		--surface0: var(--ctp-mocha-surface0);
-		--overlay1: var(--ctp-mocha-overlay1);
-		--text: var(--ctp-mocha-text);
-		--subtext0: var(--ctp-mocha-subtext0);
+		@each $color, $hex in map-get(catppuccin.$palette, "mocha") {
+			--#{$color}: #{$hex};
+		}
 
-		--rosewater: var(--ctp-mocha-rosewater);
-		--flamingo: var(--ctp-mocha-flamingo);
-		--pink: var(--ctp-mocha-pink);
-		--mauve: var(--ctp-mocha-mauve);
-		--red: var(--ctp-mocha-red);
-		--maroon: var(--ctp-mocha-maroon);
-		--peach: var(--ctp-mocha-peach);
-		--yellow: var(--ctp-mocha-yellow);
-		--green: var(--ctp-mocha-green);
-		--teal: var(--ctp-mocha-teal);
-		--sky: var(--ctp-mocha-sky);
-		--sapphire: var(--ctp-mocha-sapphire);
-		--blue: var(--ctp-mocha-blue);
-		--lavender: var(--ctp-mocha-lavender);
+		@media (prefers-color-scheme: light) {
+			@each $color, $hex in map-get(catppuccin.$palette, "latte") {
+				--#{$color}: #{$hex};
+			}
+		}
 
 		--accent: var(--pink);
-	}
-
-	@media (prefers-color-scheme: light) {
-		:root {
-			--base: var(--ctp-latte-base);
-			--mantle: var(--ctp-latte-mantle);
-			--surface0: var(--ctp-latte-surface0);
-			--overlay1: var(--ctp-latte-overlay1);
-			--text: var(--ctp-latte-text);
-			--subtext0: var(--ctp-latte-subtext0);
-
-			--rosewater: var(--ctp-latte-rosewater);
-			--flamingo: var(--ctp-latte-flamingo);
-			--pink: var(--ctp-latte-pink);
-			--mauve: var(--ctp-latte-mauve);
-			--red: var(--ctp-latte-red);
-			--maroon: var(--ctp-latte-maroon);
-			--peach: var(--ctp-latte-peach);
-			--yellow: var(--ctp-latte-yellow);
-			--green: var(--ctp-latte-green);
-			--teal: var(--ctp-latte-teal);
-			--sky: var(--ctp-latte-sky);
-			--sapphire: var(--ctp-latte-sapphire);
-			--blue: var(--ctp-latte-blue);
-			--lavender: var(--ctp-latte-lavender);
-		}
 	}
 
 	html {
@@ -361,10 +336,8 @@ const { title, description } = Astro.props;
 		margin-bottom: 2.5rem;
 		font-size: 0.9em;
 		font-family: "Iosevka", monospace;
-	}
 
-	@media (prefers-color-scheme: dark) {
-		pre {
+		@media (prefers-color-scheme: dark) {
 			background-color: var(--surface0) !important;
 		}
 	}
@@ -390,16 +363,16 @@ const { title, description } = Astro.props;
 	code {
 		counter-reset: step;
 		counter-increment: step 0;
-	}
 
-	code .line:before {
-		content: counter(step);
-		counter-increment: step;
-		width: 1rem;
-		margin-right: 1.5rem;
-		display: inline-block;
-		text-align: right;
-		color: var(--overlay1);
+		.line:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 1rem;
+			margin-right: 1.5rem;
+			display: inline-block;
+			text-align: right;
+			color: var(--overlay1);
+		}
 	}
 
 	table {
