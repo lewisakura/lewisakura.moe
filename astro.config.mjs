@@ -3,7 +3,6 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 import critters from "astro-critters";
-import purgecss from "astro-purgecss";
 
 import { FontaineTransform } from "fontaine";
 
@@ -45,11 +44,6 @@ export default defineConfig({
 		}),
 		sitemap(),
 		critters(),
-		purgecss({
-			fontFace: true,
-			keyframes: true,
-			content: ["./src/**/*.astro"],
-		}),
 		compress(),
 	],
 	output: "static",
