@@ -1,24 +1,27 @@
 ---
+import { Image } from "astro:assets";
+
 export interface Props {
 	name: string;
 	url: string;
+	gif?: boolean;
 }
 
-const { name, url } = Astro.props;
+const { name, url, gif: animated = false } = Astro.props;
 ---
 
 <a href={url}>
-	<img
-		src={`/webrings/${name}`}
+	<Image
+		src={import(`../webrings/${name}.${animated ? "gif" : "png"}`)}
 		alt={url}
-		loading="lazy"
-		decoding="async"
-		width="88"
-		height="31"
 	/>
 </a>
 
 <style>
+	a {
+		line-height: 0;
+	}
+
 	a:hover {
 		border-bottom: 0 !important;
 	}

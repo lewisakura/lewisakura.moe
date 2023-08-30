@@ -69,15 +69,15 @@ const { title, description } = Astro.props;
 				<code>@lewisakura_</code>
 			</p>
 			<div id="webring">
-				<Webring name="ovyerus.png" url="https://ovyerus.com" />
-				<Webring name="ziad87.gif" url="https://ziad87.net" />
-				<Webring name="auravoid.png" url="https://auravoid.dev" />
-				<Webring name="spotlight.gif" url="https://joscomputing.space" />
-				<Webring name="solely.png" url="https://arciniega.one" />
-				<Webring name="megu.png" url="https://megu.dev" />
-				<Webring name="tom.gif" url="https://thomasr.me" />
-				<Webring name="ven.png" url="https://vendicated.dev" />
-				<Webring name="espi.png" url="https://espi.me" />
+				<Webring name="ovyerus" url="https://ovyerus.com" />
+				<Webring name="ziad87" url="https://ziad87.net" gif={true} />
+				<Webring name="auravoid" url="https://auravoid.dev" />
+				<Webring name="spotlight" url="https://joscomputing.space" gif={true} />
+				<Webring name="solely" url="https://arciniega.one" />
+				<Webring name="megu" url="https://megu.dev" />
+				<Webring name="tom" url="https://thomasr.me" gif={true} />
+				<Webring name="ven" url="https://vendicated.dev" />
+				<Webring name="espi" url="https://espi.me" />
 			</div>
 		</footer>
 		<script>
@@ -151,246 +151,247 @@ const { title, description } = Astro.props;
 				}
 			});
 		</script>
-	</body>
+	</body><style>
+		#theFunny {
+			cursor: pointer;
+			user-select: none;
+		}
+	</style>
+
+	<style is:global lang="scss">
+		@use "@catppuccin/palette/scss/catppuccin";
+
+		@use "@fontsource/inter/scss/mixins" as Inter with (
+			$weights: (
+				400,
+				700,
+			),
+			$directory: "@fontsource/inter/files"
+		);
+
+		@use "@fontsource/iosevka/scss/mixins" as Iosevka with (
+			$weights: (
+				400,
+			),
+			$directory: "@fontsource/iosevka/files"
+		);
+
+		@include Inter.faces();
+		@include Iosevka.faces();
+
+		/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
+		/* but with catppuccin theme colors */
+
+		/* https://github.com/catppuccin/catppuccin */
+		:root {
+			@each $color, $hex in map-get(catppuccin.$palette, "mocha") {
+				--#{$color}: #{$hex};
+			}
+
+			// @media (prefers-color-scheme: light) {
+			// 	@each $color, $hex in map-get(catppuccin.$palette, "latte") {
+			// 		--#{$color}: #{$hex};
+			// 	}
+			// }
+
+			--accent: var(--pink);
+		}
+
+		html {
+			font-size: 62.5%;
+			font-family: Inter;
+		}
+
+		body {
+			font-size: 1.8rem;
+			line-height: 1.618;
+			max-width: 38em;
+			margin: auto;
+			color: var(--text);
+			background-color: var(--base);
+			padding: 13px;
+		}
+
+		@media (max-width: 684px) {
+			body {
+				font-size: calc(1.8rem * 0.85);
+			}
+		}
+
+		@media (max-width: 382px) {
+			body {
+				font-size: calc(1.8rem * 0.75);
+			}
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			line-height: 1.1;
+			font-weight: 700;
+			margin-bottom: 1rem;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			-ms-word-break: break-all;
+			word-break: break-word;
+			color: var(--accent);
+		}
+
+		h1 {
+			font-size: 2.35em;
+		}
+		h2 {
+			font-size: 2em;
+		}
+		h3 {
+			font-size: 1.75em;
+		}
+		h4 {
+			font-size: 1.5em;
+		}
+		h5 {
+			font-size: 1.25em;
+		}
+		h6 {
+			font-size: 1em;
+		}
+
+		p {
+			margin-top: 0px;
+			margin-bottom: 2.5rem;
+		}
+
+		small,
+		sub,
+		sup {
+			font-size: 75%;
+		}
+
+		hr {
+			border-color: var(--accent);
+			border-style: solid;
+		}
+
+		a {
+			text-decoration: none;
+			color: var(--accent);
+		}
+
+		a:hover {
+			border-bottom: 2px solid var(--accent);
+		}
+
+		ul {
+			padding-left: 1.4em;
+			margin-top: 0px;
+			margin-bottom: 2.5rem;
+		}
+
+		li {
+			margin-bottom: 0.4em;
+		}
+
+		blockquote {
+			margin-left: 0px;
+			margin-right: 0px;
+			padding-left: 1em;
+			padding-top: 0.8em;
+			padding-bottom: 0.8em;
+			padding-right: 0.8em;
+			border-left: 5px solid var(--accent);
+			margin-bottom: 2.5rem;
+			background-color: var(--surface0);
+		}
+
+		blockquote small {
+			font-style: italic;
+			color: var(--subtext0);
+		}
+
+		blockquote small:before {
+			content: "— ";
+		}
+
+		pre {
+			display: block;
+			padding: 1em;
+			overflow-x: auto;
+			margin-top: 0px;
+			margin-bottom: 2.5rem;
+			font-size: 0.9em;
+			font-family: Iosevka;
+
+			@media (prefers-color-scheme: dark) {
+				background-color: var(--surface0) !important;
+			}
+		}
+
+		code,
+		kbd,
+		samp {
+			font-size: 0.9em;
+			padding: 0 0.5em;
+			background-color: var(--surface0);
+			white-space: pre-wrap;
+			font-family: "Iosevka", monospace;
+		}
+
+		pre code {
+			padding: 0;
+			background-color: transparent !important;
+			white-space: pre;
+			font-size: 1em;
+			font-family: "Iosevka", monospace;
+		}
+
+		code {
+			counter-reset: step;
+			counter-increment: step 0;
+
+			.line:before {
+				content: counter(step);
+				counter-increment: step;
+				width: 1rem;
+				margin-right: 1.5rem;
+				display: inline-block;
+				text-align: right;
+				color: var(--overlay1);
+			}
+		}
+
+		table {
+			text-align: justify;
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		td,
+		th {
+			padding: 0.5em;
+			border-bottom: 1px solid var(--surface0);
+		}
+
+		summary {
+			cursor: pointer;
+			user-select: none;
+		}
+
+		nav {
+			color: var(--accent);
+		}
+
+		#socials {
+			text-align: center;
+		}
+
+		#webring {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
+	</style>
 </html>
-
-<style>
-	#theFunny {
-		cursor: pointer;
-		user-select: none;
-	}
-</style>
-
-<style is:global lang="scss">
-	@use "@catppuccin/palette/scss/catppuccin";
-
-	@use "@fontsource/inter/scss/mixins" as Inter with (
-		$weights: (
-			400,
-			700,
-		),
-		$directory: "@fontsource/inter/files"
-	);
-
-	@use "@fontsource/iosevka/scss/mixins" as Iosevka with (
-		$weights: (
-			400,
-		),
-		$directory: "@fontsource/iosevka/files"
-	);
-
-	@include Inter.faces();
-	@include Iosevka.faces();
-
-	/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
-	/* but with catppuccin theme colors */
-
-	/* https://github.com/catppuccin/catppuccin */
-	:root {
-		@each $color, $hex in map-get(catppuccin.$palette, "mocha") {
-			--#{$color}: #{$hex};
-		}
-
-		// @media (prefers-color-scheme: light) {
-		// 	@each $color, $hex in map-get(catppuccin.$palette, "latte") {
-		// 		--#{$color}: #{$hex};
-		// 	}
-		// }
-
-		--accent: var(--pink);
-	}
-
-	html {
-		font-size: 62.5%;
-		font-family: Inter;
-	}
-
-	body {
-		font-size: 1.8rem;
-		line-height: 1.618;
-		max-width: 38em;
-		margin: auto;
-		color: var(--text);
-		background-color: var(--base);
-		padding: 13px;
-	}
-
-	@media (max-width: 684px) {
-		body {
-			font-size: calc(1.8rem * 0.85);
-		}
-	}
-
-	@media (max-width: 382px) {
-		body {
-			font-size: calc(1.8rem * 0.75);
-		}
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.1;
-		font-weight: 700;
-		margin-bottom: 1rem;
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		-ms-word-break: break-all;
-		word-break: break-word;
-		color: var(--accent);
-	}
-
-	h1 {
-		font-size: 2.35em;
-	}
-	h2 {
-		font-size: 2em;
-	}
-	h3 {
-		font-size: 1.75em;
-	}
-	h4 {
-		font-size: 1.5em;
-	}
-	h5 {
-		font-size: 1.25em;
-	}
-	h6 {
-		font-size: 1em;
-	}
-
-	p {
-		margin-top: 0px;
-		margin-bottom: 2.5rem;
-	}
-
-	small,
-	sub,
-	sup {
-		font-size: 75%;
-	}
-
-	hr {
-		border-color: var(--accent);
-		border-style: solid;
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--accent);
-	}
-
-	a:hover {
-		border-bottom: 2px solid var(--accent);
-	}
-
-	ul {
-		padding-left: 1.4em;
-		margin-top: 0px;
-		margin-bottom: 2.5rem;
-	}
-
-	li {
-		margin-bottom: 0.4em;
-	}
-
-	blockquote {
-		margin-left: 0px;
-		margin-right: 0px;
-		padding-left: 1em;
-		padding-top: 0.8em;
-		padding-bottom: 0.8em;
-		padding-right: 0.8em;
-		border-left: 5px solid var(--accent);
-		margin-bottom: 2.5rem;
-		background-color: var(--surface0);
-	}
-
-	blockquote small {
-		font-style: italic;
-		color: var(--subtext0);
-	}
-
-	blockquote small:before {
-		content: "— ";
-	}
-
-	pre {
-		display: block;
-		padding: 1em;
-		overflow-x: auto;
-		margin-top: 0px;
-		margin-bottom: 2.5rem;
-		font-size: 0.9em;
-		font-family: Iosevka;
-
-		@media (prefers-color-scheme: dark) {
-			background-color: var(--surface0) !important;
-		}
-	}
-
-	code,
-	kbd,
-	samp {
-		font-size: 0.9em;
-		padding: 0 0.5em;
-		background-color: var(--surface0);
-		white-space: pre-wrap;
-		font-family: "Iosevka", monospace;
-	}
-
-	pre code {
-		padding: 0;
-		background-color: transparent !important;
-		white-space: pre;
-		font-size: 1em;
-		font-family: "Iosevka", monospace;
-	}
-
-	code {
-		counter-reset: step;
-		counter-increment: step 0;
-
-		.line:before {
-			content: counter(step);
-			counter-increment: step;
-			width: 1rem;
-			margin-right: 1.5rem;
-			display: inline-block;
-			text-align: right;
-			color: var(--overlay1);
-		}
-	}
-
-	table {
-		text-align: justify;
-		width: 100%;
-		border-collapse: collapse;
-	}
-
-	td,
-	th {
-		padding: 0.5em;
-		border-bottom: 1px solid var(--surface0);
-	}
-
-	summary {
-		cursor: pointer;
-		user-select: none;
-	}
-
-	nav {
-		color: var(--accent);
-	}
-
-	#socials {
-		text-align: center;
-	}
-
-	#webring {
-		text-align: center;
-	}
-</style>

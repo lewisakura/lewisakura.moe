@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
 
-export const get = () =>
+export const GET = () =>
 	rss({
 		title: "lewisakura",
 		description: "Ramblings, mainly, but sometimes intelligence.",

@@ -1,8 +1,6 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import compress from "astro-compress";
-import critters from "astro-critters";
 
 import { FontaineTransform } from "fontaine";
 
@@ -43,8 +41,6 @@ export default defineConfig({
 			drafts: true,
 		}),
 		sitemap(),
-		critters(),
-		compress(),
 	],
 	output: "static",
 });
