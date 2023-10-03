@@ -68,6 +68,10 @@ import Placement from "../components/Placement.astro";
 	<details>
 		<summary>That collapsible thing</summary>
 
+		<Placement title="IRL Company" from={2023} isPaid={true}>
+			<p>Working as a Software Engineer at an IRL company.</p>
+		</Placement>
+
 		<Placement
 			title="Federation Studios"
 			from={2023}
@@ -77,15 +81,13 @@ import Placement from "../components/Placement.astro";
 		</Placement>
 
 		<Placement
-			title="SAISEI再生"
+			title="SEIKA生花"
 			from={2022}
-			link="https://www.roblox.com/games/9796162795/"
+			link="https://www.roblox.com/groups/32788046/SEIKA"
 			isPaid={false}>
 			<p>
-				Developer and a bit of a data scientist*. Jack of all trades developer
-				on the project. I've written part of the combat system, the entirety of
-				the emote system and UI, and a lot of administrative tools. I'm
-				currently not working very much on the project primarily due to college.
+				Developer, director, and a bit of a data scientist*. Currently working
+				on SAISEI再生, ZOぞ LEGENDS, and Kamuro District.
 			</p>
 			<p>
 				<small>
@@ -229,7 +231,7 @@ import Placement from "../components/Placement.astro";
 		const age = document.getElementById("age")!;
 		const birthday = new Date(2004, 10, 18);
 		age.innerText = `I am ${Math.floor(
-			(Date.now() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365
+			(Date.now() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365,
 		)} years old`;
 	</script>
 </Layout>
