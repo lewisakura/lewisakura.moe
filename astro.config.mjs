@@ -10,7 +10,9 @@ import mocha from "./mocha.json";
 export default defineConfig({
 	site: "https://lewisakura.moe",
 	output: "static",
-	prefetch: true,
+	prefetch: {
+		prefetchAll: true,
+	},
 	markdown: {
 		drafts: true,
 		shikiConfig: {
