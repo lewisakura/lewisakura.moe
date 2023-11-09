@@ -9,6 +9,8 @@ import mocha from "./mocha.json";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://lewisakura.moe",
+	output: "static",
+	prefetch: true,
 	markdown: {
 		drafts: true,
 		shikiConfig: {
@@ -42,5 +44,4 @@ export default defineConfig({
 		}),
 		sitemap(),
 	],
-	output: "static",
 });
