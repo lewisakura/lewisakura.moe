@@ -9,7 +9,7 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 	<head>
 		<meta charset="UTF-8" />
@@ -161,23 +161,15 @@ const { title, description } = Astro.props;
 	<style is:global lang="scss">
 		@use "@catppuccin/palette/scss/catppuccin";
 
-		@use "@fontsource/inter/scss/mixins" as Inter with (
-			$weights: (
-				400,
-				700,
-			),
-			$directory: "@fontsource/inter/files"
-		);
-
-		@use "@fontsource/iosevka/scss/mixins" as Iosevka with (
+		@use "@fontsource/atkinson-hyperlegible/scss/mixins" as AtkinsonHyperlegible
+			with (
 			$weights: (
 				400,
 			),
-			$directory: "@fontsource/iosevka/files"
+			$directory: "@fontsource/atkinson-hyperlegible/files"
 		);
 
-		@include Inter.faces();
-		@include Iosevka.faces();
+		@include AtkinsonHyperlegible.faces();
 
 		/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
 		/* but with catppuccin theme colors */
@@ -199,7 +191,7 @@ const { title, description } = Astro.props;
 
 		html {
 			font-size: 62.5%;
-			font-family: Inter;
+			font-family: "Atkinson Hyperlegible", sans-serif;
 		}
 
 		body {
@@ -231,7 +223,7 @@ const { title, description } = Astro.props;
 		h5,
 		h6 {
 			line-height: 1.1;
-			font-weight: 700;
+			font-weight: bold;
 			margin-bottom: 1rem;
 			overflow-wrap: break-word;
 			word-wrap: break-word;
@@ -322,7 +314,7 @@ const { title, description } = Astro.props;
 			margin-top: 0px;
 			margin-bottom: 2.5rem;
 			font-size: 0.9em;
-			font-family: Iosevka;
+			font-family: monospace;
 
 			@media (prefers-color-scheme: dark) {
 				background-color: var(--surface0) !important;
@@ -336,7 +328,7 @@ const { title, description } = Astro.props;
 			padding: 0 0.5em;
 			background-color: var(--surface0);
 			white-space: pre-wrap;
-			font-family: "Iosevka", monospace;
+			font-family: monospace;
 		}
 
 		pre code {
@@ -344,7 +336,7 @@ const { title, description } = Astro.props;
 			background-color: transparent !important;
 			white-space: pre;
 			font-size: 1em;
-			font-family: "Iosevka", monospace;
+			font-family: monospace;
 		}
 
 		code {

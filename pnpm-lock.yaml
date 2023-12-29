@@ -17,12 +17,9 @@ dependencies:
   '@catppuccin/palette':
     specifier: ^0.2.0
     version: 0.2.0
-  '@fontsource/inter':
-    specifier: ^5.0.12
-    version: 5.0.12
-  '@fontsource/iosevka':
-    specifier: ^5.0.7
-    version: 5.0.7
+  '@fontsource/atkinson-hyperlegible':
+    specifier: ^5.0.18
+    version: 5.0.18
   astro:
     specifier: ^4.0.1
     version: 4.0.1(sass@1.68.0)
@@ -598,12 +595,8 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/inter@5.0.12:
-    resolution: {integrity: sha512-9MCQLyzhMqQW9Ky5k/tcE+t88EyLX6z9VrU54AadHoF6s0dGiqbNVmusMe0/vrLmDxPV1ZDl3DdVyNhR49qbPg==}
-    dev: false
-
-  /@fontsource/iosevka@5.0.7:
-    resolution: {integrity: sha512-X8s5hob/XEMPgY6JsgIwVRYsBMOxeSWlSXAWqZWeFcSF/ZyUsq/ut2fqgOlhUweBqS/ttiPBwJLXl7EPJsWqEg==}
+  /@fontsource/atkinson-hyperlegible@5.0.18:
+    resolution: {integrity: sha512-94htZ6Q0UQVEEzbSy/IEmRuGH06Y4Qv+xZJHfCQrc2QCdcHxtdqw6tUXwLyCfiPqtI5oomsh2Un7Pnls4o4NRA==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:

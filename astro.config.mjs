@@ -34,8 +34,6 @@ export default defineConfig({
 				],
 				resolvePath: (id) =>
 					new URL(`./node_modules/@fontsource/${id}/files`, import.meta.url),
-				// iosevka is a monospaced font and isn't immediately visible in most cases, so it's fine to skip
-				skipFontFaceGeneration: (font) => font === "Iosevka",
 			}),
 		],
 	},
