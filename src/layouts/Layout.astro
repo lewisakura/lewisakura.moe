@@ -68,7 +68,7 @@ const { title, description } = Astro.props;
 				<code>@lewisakura</code> /
 				<code>@lewisakura_</code>
 			</p>
-			<div id="webring">
+			<div class="webring" id="people">
 				<Webring name="ovyerus" url="https://ovyerus.com" />
 				<Webring name="ziad87" url="https://ziad87.net" gif={true} />
 				<Webring name="auravoid" url="https://auravoid.dev" />
@@ -78,6 +78,9 @@ const { title, description } = Astro.props;
 				<Webring name="tom" url="https://thomasr.me" gif={true} />
 				<Webring name="ven" url="https://vendicated.dev" />
 				<Webring name="espi" url="https://espi.me" />
+			</div>
+			<div class="webring" id="tech">
+				<Webring name="vencord" url="https://vencord.dev" gif={true} />
 			</div>
 		</footer>
 		<script>
@@ -379,11 +382,15 @@ const { title, description } = Astro.props;
 			text-align: center;
 		}
 
-		#webring {
+		.webring {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 			gap: 1rem;
+
+			&#tech {
+				margin-top: 2rem;
+			}
 		}
 	</style>
 </html>
