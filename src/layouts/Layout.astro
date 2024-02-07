@@ -25,7 +25,13 @@ const { title, description } = Astro.props;
 			href={new URL("/rss.xml", Astro.site)}
 		/>
 
-		<title>{title && `${title} | `}lewisakura</title>
+		{/*
+			conditional string interpolation seems to cause a compiler issue and dumps the rest of the head into the
+			body in this version of astro... weird
+		*/}
+		{/* <title>{title && `${title} | `}lewisakura</title> */}
+		{title && <title>{title} | lewisakura</title>}
+		{!title && <title>lewisakura</title>}
 
 		<meta property="og:title" content={title ?? "lewisakura"} />
 		{title && <meta property="og:site_name" content="lewisakura" />}

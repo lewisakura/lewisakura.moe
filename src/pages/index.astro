@@ -17,7 +17,7 @@ import Placement from "../components/Placement.astro";
 		<summary>More?</summary>
 		<p>
 			Nice to see your curiosity! <span id="age"
-				>I was 18 years old when this site was last updated</span
+				>I was 19 years old when this site was last updated</span
 			>, and I have a huge interest in technology. Whilst software engineering
 			is my passion and my major, I've dabbled in network engineering and
 			cybersecurity. They're really fun topics, so I'm very passionate about all
@@ -48,7 +48,6 @@ import Placement from "../components/Placement.astro";
 			programming, it has been my life after all, but I'd like to focus more on
 			entertaining people and making them happy. I love seeing people smile.
 		</p>
-		<p>My name is Lewis Crichton. That's my full name.</p>
 	</details>
 
 	<h2>Portfolio</h2>
@@ -68,8 +67,11 @@ import Placement from "../components/Placement.astro";
 	<details>
 		<summary>That collapsible thing</summary>
 
-		<Placement title="IRL Company" from={2023} isPaid={true}>
-			<p>Working as a Software Engineer at an IRL company.</p>
+		<Placement title="IRL Company" from={2023} to={2024} isPaid={true}>
+			<p>
+				Working as a Software Engineer at an IRL company. Using Unity, C#,
+				Visual Basic, TypeScript, and PHP. Weird combo, eh?
+			</p>
 		</Placement>
 
 		<Placement
@@ -87,8 +89,8 @@ import Placement from "../components/Placement.astro";
 			isPaid={true}>
 			<p>
 				Developer, director, and a bit of a data scientist*. Currently working
-				on JINSEI人生 and assisting with Kamuro District. Head of infrastructure,
-				scripting, and copywriting.
+				on JINSEI人生 and assisting with Kamuro District. Head of
+				infrastructure, scripting, and copywriting.
 			</p>
 			<p>
 				<small>
