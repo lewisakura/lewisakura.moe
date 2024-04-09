@@ -67,13 +67,6 @@ import Placement from "../components/Placement.astro";
 	<details>
 		<summary>That collapsible thing</summary>
 
-		<Placement title="IRL Company" from={2023} to={2024} isPaid={true}>
-			<p>
-				Working as a Software Engineer at an IRL company. Using Unity, C#,
-				Visual Basic, TypeScript, and PHP. Weird combo, eh?
-			</p>
-		</Placement>
-
 		<Placement
 			title="Federation Studios"
 			from={2023}
@@ -135,6 +128,13 @@ import Placement from "../components/Placement.astro";
 
 		<div id="oldPlacements">
 			<h3>Old Placements</h3>
+			<Placement title="IRL Company" from={2023} to={2024} isPaid={true}>
+				<p>
+					Working as a Software Engineer at an IRL company. Using Unity, C#,
+					Visual Basic, TypeScript, and PHP. Weird combo, eh? Leaving in July.
+				</p>
+			</Placement>
+
 			<Placement
 				title="Team Socks / Socksfor1"
 				from={2022}
