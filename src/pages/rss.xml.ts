@@ -8,7 +8,6 @@ export const GET = () =>
 		title: "lewisakura",
 		description: "Ramblings, mainly, but sometimes intelligence.",
 		site: "https://lewisakura.moe",
-		drafts: false,
 		items: posts.map(({ data, slug }) => ({
 			link: new URL(`/posts/${slug}`, "https://lewisakura.moe").href,
 			title: data.title,
