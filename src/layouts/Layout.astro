@@ -76,6 +76,7 @@ const { title, description } = Astro.props;
 				<code>@lewisakura_</code>
 			</p>
 			<div class="webring" id="people">
+				<Webring name="shoritsu" url="https://shoritsu.xyz" gif={true} />
 				<Webring name="ovyerus" url="https://ovyerus.com" />
 				<Webring name="ziad87" url="https://ziad87.net" gif={true} />
 				<Webring name="auravoid" url="https://auravoid.dev" />
@@ -87,7 +88,7 @@ const { title, description } = Astro.props;
 				<Webring name="espi" url="https://espi.me" />
 				<Webring name="george" url="https://george.hotten.uk/" />
 			</div>
-			<div class="webring" id="tech">
+			<div class="webring padded">
 				<Webring name="vencord" url="https://vencord.dev" gif={true} />
 			</div>
 		</footer>
@@ -176,7 +177,6 @@ const { title, description } = Astro.props;
 			with (
 			$weights: (
 				400,
-				900,
 			),
 			$directory: "@fontsource/atkinson-hyperlegible/files"
 		);
@@ -235,7 +235,7 @@ const { title, description } = Astro.props;
 		h5,
 		h6 {
 			line-height: 1.1;
-			font-weight: 900;
+			font-weight: 400;
 			margin-bottom: 1rem;
 			overflow-wrap: break-word;
 			word-wrap: break-word;
@@ -397,7 +397,7 @@ const { title, description } = Astro.props;
 			justify-content: center;
 			gap: 1rem;
 
-			&#tech {
+			&.padded {
 				margin-top: 2rem;
 			}
 		}
