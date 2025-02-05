@@ -163,6 +163,8 @@ const { title, description } = Astro.props;
 	</style>
 
 	<style is:global lang="scss">
+		@use "sass:map";
+
 		@use "@catppuccin/palette/scss/catppuccin";
 
 		@use "@fontsource/atkinson-hyperlegible/scss/mixins" as AtkinsonHyperlegible with (
@@ -179,7 +181,7 @@ const { title, description } = Astro.props;
 
 		/* https://github.com/catppuccin/catppuccin */
 		:root {
-			@each $color, $hex in map-get(catppuccin.$palette, "mocha") {
+			@each $color, $hex in map.get(catppuccin.$palette, "mocha") {
 				--#{$color}: #{$hex};
 			}
 
