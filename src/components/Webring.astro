@@ -11,10 +11,7 @@ const { name, url, gif: animated = false } = Astro.props;
 ---
 
 <a href={url}>
-	<Image
-		src={import(`../webrings/${name}.${animated ? "gif" : "png"}`)}
-		alt={url}
-	/>
+	<Image src={import(`../webrings/${name}.${animated ? "gif" : "png"}`)} alt={url} />
 </a>
 
 <style>

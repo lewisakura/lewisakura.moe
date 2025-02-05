@@ -18,17 +18,14 @@ const { title, description } = Astro.props;
 
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title="lewisakura"
-			href={new URL("/rss.xml", Astro.site)}
-		/>
+		<link rel="alternate" type="application/rss+xml" title="lewisakura" href={new URL("/rss.xml", Astro.site)} />
 
-		{/*
+		{
+			/*
 			conditional string interpolation seems to cause a compiler issue and dumps the rest of the head into the
 			body in this version of astro... weird
-		*/}
+		*/
+		}
 		{/* <title>{title && `${title} | `}lewisakura</title> */}
 		{title && <title>{title} | lewisakura</title>}
 		{!title && <title>lewisakura</title>}
@@ -70,7 +67,6 @@ const { title, description } = Astro.props;
 				<a href="https://youtube.com/@lewisakura" rel="me">YouTube</a> &bull;
 				<a href="https://twitch.tv/lewisakura" rel="me">Twitch</a> &bull;
 				<a href="https://www.patreon.com/lewisakura" rel="me">Patreon</a> &bull;
-
 
 				<code>@lewisakura</code> /
 				<code>@lewisakura_</code>
@@ -130,16 +126,12 @@ const { title, description } = Astro.props;
 			const funny = document.getElementById("theFunny")! as HTMLSpanElement;
 
 			funny.onclick = () => {
-				const currentValue =
-					document.documentElement.style.getPropertyValue("--accent");
+				const currentValue = document.documentElement.style.getPropertyValue("--accent");
 
 				let newValue: string = "";
 				do {
 					newValue = colors[Math.floor(Math.random() * colors.length)];
-				} while (
-					newValue === currentValue ||
-					isSimilar(currentValue, newValue)
-				);
+				} while (newValue === currentValue || isSimilar(currentValue, newValue));
 
 				document.documentElement.style.setProperty("--accent", newValue);
 			};
@@ -173,8 +165,7 @@ const { title, description } = Astro.props;
 	<style is:global lang="scss">
 		@use "@catppuccin/palette/scss/catppuccin";
 
-		@use "@fontsource/atkinson-hyperlegible/scss/mixins" as AtkinsonHyperlegible
-			with (
+		@use "@fontsource/atkinson-hyperlegible/scss/mixins" as AtkinsonHyperlegible with (
 			$weights: (
 				400,
 			),
