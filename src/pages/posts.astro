@@ -6,8 +6,4 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
 ---
 
-<PostListingLayout
-	title="Posts"
-	posts={posts}
-	description="Personal posts from me. Mixed opinions and writeups."
-/>
+<PostListingLayout title="Posts" posts={posts} description="Personal posts from me. Mixed opinions and writeups." />

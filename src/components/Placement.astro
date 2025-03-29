@@ -15,7 +15,18 @@ const { title, link, from, to, isPaid } = Astro.props;
 
 <article class:list={{ mantle: !!to }}>
 	<div>
-		<h5>{title} {link && <>{" "}<a href={link}>🔗</a></>} {isPaid && " 💸"}</h5>
+		<h5>
+			{title}
+			{
+				link && (
+					<>
+						{" "}
+						<a href={link}>🔗</a>
+					</>
+				)
+			}
+			{isPaid && " 💸"}
+		</h5>
 		<span>{from !== to ? `${from}\u2013${to || ""}` : from}</span>
 	</div>
 	<slot />

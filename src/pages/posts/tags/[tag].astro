@@ -21,9 +21,7 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const posts = await getCollection("posts", (post) =>
-	post.data.tags.includes(tag!)
-);
+const posts = await getCollection("posts", (post) => post.data.tags.includes(tag!));
 ---
 
 <PostListingLayout
