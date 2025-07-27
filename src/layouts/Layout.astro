@@ -1,5 +1,6 @@
 ---
 import Webring from "../components/Webring.astro";
+import "@fontsource/atkinson-hyperlegible/400.css"; // load it here instead of in <style>
 
 export interface Props {
 	title?: string;
@@ -123,6 +124,12 @@ const { title, description } = Astro.props;
 				return false;
 			}
 
+			// load saved accent color from localStorage
+			const savedAccent = localStorage.getItem("accentColor");
+			if (savedAccent) {
+				document.documentElement.style.setProperty("--accent", savedAccent);
+			}
+
 			const funny = document.getElementById("theFunny")! as HTMLSpanElement;
 
 			funny.onclick = () => {
@@ -134,6 +141,7 @@ const { title, description } = Astro.props;
 				} while (newValue === currentValue || isSimilar(currentValue, newValue));
 
 				document.documentElement.style.setProperty("--accent", newValue);
+				localStorage.setItem("accentColor", newValue);
 			};
 
 			// konami code
@@ -167,14 +175,7 @@ const { title, description } = Astro.props;
 
 		@use "@catppuccin/palette/scss/catppuccin";
 
-		@use "@fontsource/atkinson-hyperlegible/scss/mixins" as AtkinsonHyperlegible with (
-			$weights: (
-				400,
-			),
-			$directory: "@fontsource/atkinson-hyperlegible/files"
-		);
 
-		@include AtkinsonHyperlegible.faces();
 
 		/* based off of sakura.css: https://github.com/oxalorg/sakura/ */
 		/* but with catppuccin theme colors */
